@@ -1,0 +1,24 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "Frontend Mentor challenge: todo app with light/dark theme",
+  "scripts": {
+    "watch": "sass --watch scss/main.scss:css/style.css",
+    "build": "sass scss/main.scss:css/style.css --style=compressed --no-source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxi1993-tech/Todo-app.git"
+  },
+  "keywords": [],
+  "author": "Maxime Chapelle",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/maxi1993-tech/Todo-app/issues"
+  },
+  "homepage": "https://github.com/maxi1993-tech/Todo-app#readme",
+  "devDependencies": {
+    "sass": "^1.102.0"
+  }
+}
