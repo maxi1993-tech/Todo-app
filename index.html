@@ -14,22 +14,60 @@
 
 <body>
 
-  Todo
+  <header class="header">
+    <h1 class="header__title">Todo</h1>
+    <button class="header__mode" type="button">
+      <img class="header__icon" src="./images/icon-moon.svg" alt="">
+    </button>
+  </header>
 
-  <!-- Add dynamic number --> items left
+  <main class="main">
 
-  All
-  Active
-  Completed
+    <form class="todo-form">
+      <div class="todo-form__check"></div>
 
-  Clear Completed
+      <label class="sr-only" for="todo-form">Create a new todo</label>
+      <input class="todo-form__input" name="todo-form" id="todo-form" type="text" placeholder="Create a new todo...">
+    </form>
 
-  Drag and drop to reorder list
+    <ul class="todo">
+      <li class="todo__item">
+        <input type="checkbox" name="todo-item" id="todo-item">
+        <label for="todo-item">Complete online JavaScript course</label>
+        <button class="todo-delete" type="button"><img src="./images/icon-cross.svg" alt=""></button>
+      </li>
+    </ul>
+
+    <div class="toolbar__container">
+
+      <div class="toolbar__count">
+        <span class="toolbar__number">5</span>
+        <span class="toolbar__text">items left</span>
+      </div>
+
+      <ul class="toolbar__filters">
+        <li>
+          <button class="toolbar__filter" type="button">All</button>
+        </li>
+        <li>
+          <button class="toolbar__filter" type="button">Active</button>
+        </li>
+        <li>
+          <button class="toolbar__filter" type="button">Completed</button>
+        </li>
+      </ul>
+
+      <button class="toolbar__clear-button" type="button">Clear Completed</button>
+    </div>
+
+    <p class="main__text">Drag and drop to reorder list</p>
+  </main>
 
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </footer>
+
 </body>
 
 </html>
