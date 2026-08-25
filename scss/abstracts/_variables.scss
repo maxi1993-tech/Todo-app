@@ -1,0 +1,25 @@
+// breakpoints
+$md: 768px;
+$lg: 1024px;
+$xl: 1440px;
+
+// main colors
+$blue-500: hsl(220, 98%, 61%);
+$check-background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+// light theme
+$gray-50: hsl(0, 0%, 98%);
+$gray-300: hsl(233, 11%, 84%);
+$text-light: hsl(236, 9%, 61%);
+$purple: hsl(234, 39%, 85%);
+$navy-850: hsl(235, 19%, 35%);
+
+// dark theme
+$text-dark: hsl(236, 9%, 61%);
+$purple-100-hover: hsl(236, 33%, 92%);
+$purple-300: hsl(234, 39%, 85%);
+$purple-600: hsl(235, 16%, 43%);
+$purple-700: hsl(233, 14%, 35%);
+$purple-800: hsl(237, 14%, 26%);
+$navy-900: hsl(235, 24%, 19%);
+$navy-950: hsl(235, 21%, 11%);
