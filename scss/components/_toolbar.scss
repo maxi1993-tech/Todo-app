@@ -2,12 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 48px;
-    background-color: var(--todo-list);
-    padding: 0 20px;
+    padding: 18px 20px;
     font-size: 12px;
     color: var(--text);
-
+    
     &__clear-button {
         color: var(--text);
     }
