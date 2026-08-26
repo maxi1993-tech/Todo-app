@@ -3,10 +3,30 @@
     justify-content: space-between;
     align-items: center;
     padding: 18px 20px;
-    font-size: 12px;
+    font-size: 0.75rem;
     color: var(--text);
-    
+
     &__clear-button {
         color: var(--text);
+    }
+
+    &__filters {
+        background-color: var(--todo-list);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 17px 0;
+        border-radius: 5px;
+    }
+
+    &__filter {
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: var(--text);
+
+        &:hover {
+            color: var(--text-hover);
+        }
     }
 }
