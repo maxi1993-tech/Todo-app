@@ -1,0 +1,41 @@
+.todo {
+    background-color: var(--todo-list);
+    border-radius: 5px;
+
+    &__box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--divider-line);
+        padding: 1rem 1.25rem;
+    }
+
+    &__item:last-child {
+        border-bottom: none;
+    }
+
+    &__input {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid var(--divider-line);
+        flex-shrink: 0;
+        appearance: none;
+        margin: 0;
+    }
+
+    &__label {
+        font-size: 12px;
+    }
+
+    &__delete {
+        width: 12px;
+    }
+}
