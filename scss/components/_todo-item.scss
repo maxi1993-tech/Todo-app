@@ -23,6 +23,26 @@
         flex-shrink: 0;
         appearance: none;
         margin: 0;
+
+        &:checked {
+            background: var(--checkbox);
+            border: none;
+
+            &::after {
+                content: "";
+                background-image: url("../images/icon-check.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 20px;
+                height: 20px;
+                display: block;
+            }
+
+            &+.todo__label {
+                color: var(--checked-text);
+                text-decoration: line-through;
+            }
+        }
     }
 
     &__label {
