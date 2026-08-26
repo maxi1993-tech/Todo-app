@@ -2,10 +2,9 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    height: 48px;
     background-color: var(--todo-list);
     border-radius: 5px;
-    padding: 0 24px;
+    padding: 14px 24px;
     box-shadow: var(--shadow);
 
     &__check {
@@ -27,6 +26,4 @@
             color: var(--new-todo-text);
         }
     }
-
-
 }
