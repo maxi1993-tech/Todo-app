@@ -1,6 +1,4 @@
 .todo {
-    background-color: var(--todo-list);
-    border-radius: 5px;
 
     &__box {
         display: flex;
@@ -15,10 +13,6 @@
         align-items: center;
         border-bottom: 1px solid var(--divider-line);
         padding: 1rem 1.25rem;
-    }
-
-    &__item:last-child {
-        border-bottom: none;
     }
 
     &__input {
