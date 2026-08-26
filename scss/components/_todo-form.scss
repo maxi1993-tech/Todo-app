@@ -6,6 +6,7 @@
     background-color: var(--todo-list);
     border-radius: 5px;
     padding: 0 24px;
+    box-shadow: var(--shadow);
 
     &__check {
         width: 20px;
