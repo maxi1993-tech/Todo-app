@@ -17,15 +17,16 @@
     }
 
     &__input {
-        font-size: 18px;
+        font-size: 0.75rem;
         letter-spacing: 0.25px;
         border: none;
         background: none;
         flex: 1;
+
+        &::placeholder {
+            color: var(--new-todo-text);
+        }
     }
 
-    &__input::placeholder {
-        font-size: 12px;
-        color: var(--new-todo-text);
-    }
+
 }
