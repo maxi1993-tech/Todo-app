@@ -1,33 +1,33 @@
 .toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  font-size: 0.75rem;
+  color: var(--text);
+
+  &__clear-button {
+    color: var(--text);
+  }
+
+  &__filters {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 18px 20px;
-    font-size: 0.75rem;
+    gap: 1rem;
+    padding: 17px 0;
+    background-color: var(--todo-list);
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+  }
+
+  &__filter {
+    font-size: 0.875rem;
+    font-weight: 700;
     color: var(--text);
 
-    &__clear-button {
-        color: var(--text);
+    &:hover {
+      color: var(--text-hover);
     }
-
-    &__filters {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        padding: 17px 0;
-        background-color: var(--todo-list);
-        border-radius: 5px;
-        box-shadow: var(--shadow);
-    }
-
-    &__filter {
-        font-size: 0.875rem;
-        font-weight: 700;
-        color: var(--text);
-
-        &:hover {
-            color: var(--text-hover);
-        }
-    }
+  }
 }

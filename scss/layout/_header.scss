@@ -1,18 +1,18 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    &__title {
-        font-size: 1.5rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.5em;
-        color: var(--title);
-    }
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    color: var(--title);
+  }
 
-    &__icon {
-        width: 20px;
-        height: 20px;
-    }
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
 }

@@ -1,54 +1,54 @@
 .todo {
 
-    &__box {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
+  &__box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 
-    &__item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 1.25rem;
-        border-bottom: 1px solid var(--divider-line);
-    }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--divider-line);
+  }
 
-    &__input {
-        flex-shrink: 0;
+  &__input {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    border-radius: 50%;
+    border: 1px solid var(--divider-line);
+    appearance: none;
+
+    &:checked {
+      background: var(--checkbox);
+      border: none;
+
+      &::after {
+        content: "";
+        display: block;
         width: 20px;
         height: 20px;
-        margin: 0;
-        border-radius: 50%;
-        border: 1px solid var(--divider-line);
-        appearance: none;
+        background-image: url("../images/icon-check.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
 
-        &:checked {
-            background: var(--checkbox);
-            border: none;
-
-            &::after {
-                content: "";
-                display: block;
-                width: 20px;
-                height: 20px;
-                background-image: url("../images/icon-check.svg");
-                background-repeat: no-repeat;
-                background-position: center;
-            }
-
-            &+.todo__label {
-                color: var(--checked-text);
-                text-decoration: line-through;
-            }
-        }
+      &+.todo__label {
+        color: var(--checked-text);
+        text-decoration: line-through;
+      }
     }
+  }
 
-    &__label {
-        font-size: 0.75rem;
-    }
+  &__label {
+    font-size: 0.75rem;
+  }
 
-    &__delete {
-        width: 12px;
-    }
+  &__delete {
+    width: 12px;
+  }
 }

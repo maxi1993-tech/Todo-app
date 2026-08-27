@@ -1,29 +1,29 @@
 .todo-form {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 14px 24px;
-    background-color: var(--todo-list);
-    border-radius: 5px;
-    box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 14px 24px;
+  background-color: var(--todo-list);
+  border-radius: 5px;
+  box-shadow: var(--shadow);
 
-    &__check {
-        flex-shrink: 0;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        border: 1px solid var(--divider-line);
+  &__check {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--divider-line);
+  }
+
+  &__input {
+    flex: 1;
+    font-size: 0.75rem;
+    letter-spacing: 0.25px;
+    border: none;
+    background: none;
+
+    &::placeholder {
+      color: var(--new-todo-text);
     }
-
-    &__input {
-        flex: 1;
-        font-size: 0.75rem;
-        letter-spacing: 0.25px;
-        border: none;
-        background: none;
-
-        &::placeholder {
-            color: var(--new-todo-text);
-        }
-    }
+  }
 }
