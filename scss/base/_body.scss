@@ -10,4 +10,12 @@ body {
   @include desktop {
     background-image: url("../images/bg-desktop-light.jpg");
   }
+
+  [data-theme="dark"] & {
+    background-image: url("../images/bg-mobile-dark.jpg");
+
+    @include desktop {
+      background-image: url("../images/bg-desktop-dark.jpg");
+    }
+  }
 }

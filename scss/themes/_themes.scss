@@ -10,6 +10,7 @@
     --checked-text: #{$gray-300};
     --text: #{$gray-600};
     --divider-line: #{$purple-300};
+    --shadow: #{$box-shadow-light};
 }
 
 // Dark
@@ -18,7 +19,9 @@
     --new-todo-text: #{$purple-700};
     --todo-list: #{$navy-900};
     --unchecked-text: #{$purple-100};
+    --text-hover: #{$purple-300};
     --checked-text: #{$purple-700};
     --text: #{$purple-600};
     --divider-line: #{$purple-800};
+    --shadow: #{$box-shadow-dark};
 }
