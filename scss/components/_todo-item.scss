@@ -39,6 +39,7 @@
     border-radius: 50%;
     border: 1px solid var(--divider-line);
     appearance: none;
+    cursor: pointer;
 
     @include desktop {
       width: 24px;
