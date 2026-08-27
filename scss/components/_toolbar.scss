@@ -11,12 +11,12 @@
     }
 
     &__filters {
-        background-color: var(--todo-list);
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 1rem;
         padding: 17px 0;
+        background-color: var(--todo-list);
         border-radius: 5px;
         box-shadow: var(--shadow);
     }

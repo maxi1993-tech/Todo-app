@@ -5,10 +5,10 @@
 
     &__title {
         font-size: 1.5rem;
-        color: var(--title);
+        font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.5em;
-        font-weight: 700;
+        color: var(--title);
     }
 
     &__icon {
