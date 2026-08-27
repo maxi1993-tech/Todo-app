@@ -5,6 +5,10 @@
   flex-direction: column;
   gap: 1rem;
 
+  @include desktop {
+    position: relative;
+  }
+
   &__text {
     margin-top: 1.5rem;
     font-size: 0.875rem;
