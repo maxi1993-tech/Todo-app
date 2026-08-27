@@ -21,6 +21,13 @@
 
     @include desktop {
       padding: 20px 24px;
+
+      &:hover {
+
+        .todo__delete {
+          opacity: 1;
+        }
+      }
     }
   }
 
@@ -75,9 +82,11 @@
 
   &__delete {
     width: 12px;
+    transition: opacity 0.2s ease-in-out;
 
     @include desktop {
       width: 18px;
+      opacity: 0;
     }
   }
 }
