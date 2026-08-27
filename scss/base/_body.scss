@@ -1,7 +1,13 @@
+@use "../abstracts/mixins" as *;
+
 body {
   min-height: 100dvh;
   background-image: url("../images/bg-mobile-light.jpg");
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-color: var(--background);
+
+  @include desktop {
+    background-image: url("../images/bg-desktop-light.jpg");
+  }
 }

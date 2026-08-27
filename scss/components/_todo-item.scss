@@ -1,9 +1,15 @@
+@use "../abstracts/mixins" as *;
+
 .todo {
 
   &__box {
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    @include desktop {
+      align-items: flex-end;
+    }
   }
 
   &__item {
@@ -12,6 +18,10 @@
     align-items: center;
     padding: 1rem 1.25rem;
     border-bottom: 1px solid var(--divider-line);
+
+    @include desktop {
+      padding: 20px 24px;
+    }
   }
 
   &__input {
@@ -22,6 +32,11 @@
     border-radius: 50%;
     border: 1px solid var(--divider-line);
     appearance: none;
+
+    @include desktop {
+      width: 24px;
+      height: 24px;
+    }
 
     &:checked {
       background: var(--checkbox);
@@ -35,6 +50,11 @@
         background-image: url("../images/icon-check.svg");
         background-repeat: no-repeat;
         background-position: center;
+
+        @include desktop {
+          width: 24px;
+          height: 24px;
+        }
       }
 
       &+.todo__label {
@@ -46,9 +66,18 @@
 
   &__label {
     font-size: 0.75rem;
+    color: var(--unchecked-text);
+
+    @include desktop {
+      font-size: 1.125rem;
+    }
   }
 
   &__delete {
     width: 12px;
+
+    @include desktop {
+      width: 18px;
+    }
   }
 }

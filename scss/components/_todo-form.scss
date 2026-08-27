@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as *;
+
 .todo-form {
   display: flex;
   align-items: center;
@@ -7,12 +9,22 @@
   border-radius: 5px;
   box-shadow: var(--shadow);
 
+  @include desktop {
+    padding: 20px 24px;
+    align-items: flex-end;
+  }
+
   &__check {
     flex-shrink: 0;
     width: 20px;
     height: 20px;
     border-radius: 50%;
     border: 1px solid var(--divider-line);
+
+    @include desktop {
+      width: 24px;
+      height: 24px;
+    }
   }
 
   &__input {
@@ -21,6 +33,10 @@
     letter-spacing: 0.25px;
     border: none;
     background: none;
+
+    @include desktop {
+      font-size: 1.125rem;
+    }
 
     &::placeholder {
       color: var(--new-todo-text);

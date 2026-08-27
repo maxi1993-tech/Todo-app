@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as *;
 
 @mixin desktop {
-  @media (min-width: $xl) {
+  @media (min-width: $lg) {
     @content;
   }
 }

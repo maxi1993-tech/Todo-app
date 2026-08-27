@@ -1,5 +1,11 @@
+@use "../abstracts/mixins" as *;
+
 .todo-card {
-    background-color: var(--todo-list);
-    border-radius: 5px;
-    box-shadow: var(--shadow);
+  background-color: var(--todo-list);
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+
+  @include desktop {
+    position: relative;
+  }
 }

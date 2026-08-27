@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as *;
+
 .main {
   display: flex;
   flex-direction: column;
@@ -8,5 +10,9 @@
     font-size: 0.875rem;
     text-align: center;
     color: var(--text);
+
+    @include desktop {
+      margin-top: 0.5rem;
+    }
   }
 }
