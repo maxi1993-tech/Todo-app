@@ -33,6 +33,7 @@
     letter-spacing: 0.25px;
     border: none;
     background: none;
+    color: var(--text-input);
 
     @include desktop {
       font-size: 1.125rem;
