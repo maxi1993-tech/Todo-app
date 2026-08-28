@@ -42,8 +42,12 @@
     font-weight: 700;
     color: var(--text);
 
-    &:hover {
+    &:not(.toolbar__filter--active):hover {
       color: var(--text-hover);
+    }
+
+    &--active {
+      color: var(--option-selected);
     }
   }
 }
