@@ -88,6 +88,10 @@
     @include desktop {
       width: 18px;
       opacity: 0;
+
+      &:focus-visible {
+        opacity: 1;
+      }
     }
   }
 }
