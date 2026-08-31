@@ -5,6 +5,8 @@ const todos = [
 
 let currentFilter = "all"
 
+let nextId = 3
+
 function renderTodos(todos) {
 
     const todoContainer = document.querySelector(".todo")
@@ -54,7 +56,7 @@ function addNewTodo(todos) {
             return
         }
 
-        const newTodo = { id: Date.now(), text: value, done: false }
+        const newTodo = { id: nextId++, text: value, done: false }
 
         todos.push(newTodo)
         valueNewTodo.value = ""
