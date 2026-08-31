@@ -5,7 +5,7 @@ const todos = [
 
 let currentFilter = "all"
 
-function renderTodos() {
+function renderTodos(todos) {
 
     const todoContainer = document.querySelector(".todo")
 
@@ -37,4 +37,28 @@ function renderTodos() {
     todoContainer.appendChild(fragment)
 }
 
-renderTodos()
+renderTodos(todos)
+
+function addNewTodo(todos) {
+
+    const formTodo = document.querySelector(".todo-form")
+    const valueNewTodo = document.querySelector(".todo-form__input")
+
+    formTodo.addEventListener("submit", (event) => {
+
+        event.preventDefault()
+
+        const value = valueNewTodo.value.trim()
+
+        if (!value) {
+            return
+        }
+
+        const newTodo = { id: Date.now(), text: value, done: false }
+
+        todos.push(newTodo)
+        valueNewTodo.value = ""
+        renderTodos(todos)
+    })
+}
+addNewTodo(todos)
