@@ -16,7 +16,17 @@ function renderTodos(todos) {
     const todoTemplate = document.querySelector("#todo-template")
     const fragment = document.createDocumentFragment()
 
-    todos.forEach(todo => {
+    let visibleTodos
+
+    if (currentFilter === "active") {
+        visibleTodos = todos.filter(todo => todo.done === false)
+    } else if (currentFilter === "completed") {
+        visibleTodos = todos.filter(todo => todo.done === true)
+    } else {
+        visibleTodos = todos
+    }
+
+    visibleTodos.forEach(todo => {
 
         const todoClone = todoTemplate.content.cloneNode(true)
 
@@ -37,6 +47,12 @@ function renderTodos(todos) {
     })
 
     todoContainer.appendChild(fragment)
+
+    const filterButtons = document.querySelectorAll(".toolbar__filter")
+
+    filterButtons.forEach(button => {
+        button.classList.toggle("toolbar__filter--active", button.dataset.filter === currentFilter)
+    })
 }
 
 renderTodos(todos)
@@ -102,3 +118,20 @@ function deleteTask(todos) {
     })
 }
 deleteTask(todos)
+
+function handleFilters() {
+
+    const filters = document.querySelector(".toolbar__filters")
+
+    filters.addEventListener("click", (event) => {
+
+        const filterSelected = event.target.closest(".toolbar__filter")
+
+        if (!filterSelected) return
+
+        currentFilter = filterSelected.dataset.filter
+
+        renderTodos(todos)
+    })
+}
+handleFilters()
