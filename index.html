@@ -9,6 +9,7 @@
 
   <title>Frontend Mentor | Todo app</title>
   <link rel="stylesheet" href="css/style.css">
+  <script defer src="./js/script.js"></script>
 
 </head>
 
@@ -36,22 +37,17 @@
 
         <ul class="todo">
 
-          <li class="todo__item">
-            <div class="todo__box">
-              <input class="todo__input" type="checkbox" name="todo-item" id="todo-item">
-              <label class="todo__label" for="todo-item">Complete online JavaScript course</label>
-            </div>
-            <button class="todo__delete" type="button"><img src="./images/icon-cross.svg" alt=""></button>
-          </li>
-          <li class="todo__item">
-            <div class="todo__box">
-              <input class="todo__input" type="checkbox" name="todo-item" id="todo-item">
-              <label class="todo__label" for="todo-item">Complete online JavaScript course</label>
-            </div>
-            <button class="todo__delete" type="button"><img src="./images/icon-cross.svg" alt=""></button>
-          </li>
-
         </ul>
+
+        <template id="todo-template">
+          <li class="todo__item">
+            <div class="todo__box">
+              <input class="todo__input" type="checkbox" id="">
+              <label class="todo__label" for="">Complete online JavaScript course</label>
+            </div>
+            <button class="todo__delete" type="button"><img src="./images/icon-cross.svg" alt=""></button>
+          </li>
+        </template>
 
         <div class="toolbar">
 
