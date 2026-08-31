@@ -82,3 +82,23 @@ function markAsComplete(todos) {
 }
 markAsComplete(todos)
 
+function deleteTask(todos) {
+
+    const todoContainer = document.querySelector(".todo")
+
+    todoContainer.addEventListener("click", (event) => {
+
+        const taskDelete = event.target.closest(".todo__delete")
+
+        if (!taskDelete) return
+
+        const item = event.target.closest(".todo__item")
+        const id = Number(item.dataset.todoId)
+
+        const positionTaskDelete = todos.findIndex(todo => todo.id === id)
+
+        todos.splice(positionTaskDelete, 1)
+        renderTodos(todos)
+    })
+}
+deleteTask(todos)
