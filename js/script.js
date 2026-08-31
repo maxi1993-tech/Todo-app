@@ -62,3 +62,21 @@ function addNewTodo(todos) {
     })
 }
 addNewTodo(todos)
+
+function markAsComplete(todos) {
+    const todoContainer = document.querySelector(".todo")
+
+    todoContainer.addEventListener("change", (event) => {
+        const item = event.target.closest(".todo__item")
+
+        if (!item) return
+        const todo = todos.find(t => t.id === Number(item.dataset.todoId))
+
+        if (todo) {
+            todo.done = event.target.checked
+            renderTodos(todos)
+        }
+    })
+}
+markAsComplete(todos)
+
