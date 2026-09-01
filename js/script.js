@@ -1,11 +1,6 @@
-let todos = [
-    { id: 1, text: "Complete online JavaScript course", done: true },
-    { id: 2, text: "Jog around the park 3x", done: false }
-]
+let todos = []
 
 let currentFilter = "all"
-
-let nextId = 3
 
 function renderTodos() {
 
@@ -77,10 +72,11 @@ function addNewTodo() {
             return
         }
 
-        const newTodo = { id: nextId++, text: value, done: false }
+        const newTodo = { id: crypto.randomUUID(), text: value, done: false }
 
         todos.push(newTodo)
         valueNewTodo.value = ""
+        saveTodos()
         renderTodos()
     })
 }
@@ -93,10 +89,11 @@ function markAsComplete() {
         const item = event.target.closest(".todo__item")
 
         if (!item) return
-        const todo = todos.find(t => t.id === Number(item.dataset.todoId))
+        const todo = todos.find(t => t.id === item.dataset.todoId)
 
         if (todo) {
             todo.done = event.target.checked
+            saveTodos()
             renderTodos()
         }
     })
@@ -114,11 +111,12 @@ function deleteTask() {
         if (!taskDelete) return
 
         const item = event.target.closest(".todo__item")
-        const id = Number(item.dataset.todoId)
+        const id = item.dataset.todoId
 
         const positionTaskDelete = todos.findIndex(todo => todo.id === id)
 
         todos.splice(positionTaskDelete, 1)
+        saveTodos()
         renderTodos()
     })
 }
@@ -149,9 +147,11 @@ function clearCompleted() {
 
 
         todos = todos.filter(todo => todo.done === false)
+        saveTodos()
         renderTodos()
     })
 }
+
 
 function handleDarkMode() {
 
@@ -176,6 +176,7 @@ function handleDarkMode() {
     })
 }
 
+
 function loadTheme() {
     const headerMode = document.querySelector(".header__mode")
     const headerIcon = document.querySelector(".header__icon")
@@ -190,8 +191,25 @@ function loadTheme() {
 }
 
 
+function saveTodos() {
+
+    localStorage.setItem("todos", JSON.stringify(todos))
+}
+
+function loadTodos() {
+
+    const storage = localStorage.getItem("todos")
+
+    if (storage !== null) {
+        todos = JSON.parse(storage)
+    }
+}
+
+
 function init() {
 
+    loadTheme()
+    loadTodos()
     renderTodos()
     addNewTodo()
     markAsComplete()
@@ -199,7 +217,6 @@ function init() {
     handleFilters()
     clearCompleted()
     handleDarkMode()
-    loadTheme()
 }
 
 init()
