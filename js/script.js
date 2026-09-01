@@ -59,6 +59,7 @@ function renderTodos() {
     toolbarNumber.textContent = todos.filter(todo => todo.done === false).length
 }
 
+
 function addNewTodo() {
 
     const formTodo = document.querySelector(".todo-form")
@@ -81,6 +82,7 @@ function addNewTodo() {
         renderTodos()
     })
 }
+
 
 function markAsComplete() {
     const todoContainer = document.querySelector(".todo")
@@ -119,6 +121,7 @@ function deleteTask() {
     })
 }
 
+
 function handleFilters() {
 
     const filters = document.querySelector(".toolbar__filters")
@@ -136,6 +139,19 @@ function handleFilters() {
 }
 
 
+function clearCompleted() {
+
+    const clearButton = document.querySelector(".toolbar__clear-button")
+
+    clearButton.addEventListener("click", () => {
+
+
+        todos = todos.filter(todo => todo.done === false)
+        renderTodos()
+    })
+}
+
+
 function init() {
 
     renderTodos()
@@ -143,5 +159,7 @@ function init() {
     markAsComplete()
     deleteTask()
     handleFilters()
+    clearCompleted()
 }
+
 init()
