@@ -53,6 +53,10 @@ function renderTodos(todos) {
     filterButtons.forEach(button => {
         button.classList.toggle("toolbar__filter--active", button.dataset.filter === currentFilter)
     })
+
+    const toolbarNumber = document.querySelector(".toolbar__number")
+
+    toolbarNumber.textContent = todos.filter(todo => todo.done === false).length
 }
 
 renderTodos(todos)
