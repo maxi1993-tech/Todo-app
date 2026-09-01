@@ -1,4 +1,4 @@
-const todos = [
+let todos = [
     { id: 1, text: "Complete online JavaScript course", done: true },
     { id: 2, text: "Jog around the park 3x", done: false }
 ]
@@ -7,7 +7,7 @@ let currentFilter = "all"
 
 let nextId = 3
 
-function renderTodos(todos) {
+function renderTodos() {
 
     const todoContainer = document.querySelector(".todo")
 
@@ -59,9 +59,7 @@ function renderTodos(todos) {
     toolbarNumber.textContent = todos.filter(todo => todo.done === false).length
 }
 
-renderTodos(todos)
-
-function addNewTodo(todos) {
+function addNewTodo() {
 
     const formTodo = document.querySelector(".todo-form")
     const valueNewTodo = document.querySelector(".todo-form__input")
@@ -80,12 +78,11 @@ function addNewTodo(todos) {
 
         todos.push(newTodo)
         valueNewTodo.value = ""
-        renderTodos(todos)
+        renderTodos()
     })
 }
-addNewTodo(todos)
 
-function markAsComplete(todos) {
+function markAsComplete() {
     const todoContainer = document.querySelector(".todo")
 
     todoContainer.addEventListener("change", (event) => {
@@ -96,13 +93,13 @@ function markAsComplete(todos) {
 
         if (todo) {
             todo.done = event.target.checked
-            renderTodos(todos)
+            renderTodos()
         }
     })
 }
-markAsComplete(todos)
 
-function deleteTask(todos) {
+
+function deleteTask() {
 
     const todoContainer = document.querySelector(".todo")
 
@@ -118,10 +115,9 @@ function deleteTask(todos) {
         const positionTaskDelete = todos.findIndex(todo => todo.id === id)
 
         todos.splice(positionTaskDelete, 1)
-        renderTodos(todos)
+        renderTodos()
     })
 }
-deleteTask(todos)
 
 function handleFilters() {
 
@@ -135,7 +131,17 @@ function handleFilters() {
 
         currentFilter = filterSelected.dataset.filter
 
-        renderTodos(todos)
+        renderTodos()
     })
 }
-handleFilters()
+
+
+function init() {
+
+    renderTodos()
+    addNewTodo()
+    markAsComplete()
+    deleteTask()
+    handleFilters()
+}
+init()
