@@ -205,6 +205,44 @@ function loadTodos() {
     }
 }
 
+function drag() {
+
+    let dragged = null
+
+    const source = document.querySelector(".todo")
+
+    source.addEventListener("dragstart", (event) => {
+        event.target.classList.add("dragging")
+        dragged = event.target
+    })
+
+    source.addEventListener("dragend", (event) => {
+        event.target.classList.remove("dragging")
+    })
+
+    source.addEventListener("dragover", (event) => {
+        event.preventDefault()
+    })
+
+    source.addEventListener("drop", (event) => {
+        event.preventDefault()
+        const item = event.target.closest(".todo__item")
+        if (!item) return
+
+        const movedTaskId = dragged.dataset.todoId
+        const targetTaskId = item.dataset.todoId
+
+        const indexStart = todos.findIndex(todo => todo.id === movedTaskId)
+        const indexEnd = todos.findIndex(todo => todo.id === targetTaskId)
+
+        const elementMoved = todos.splice(indexStart, 1)[0]
+
+        todos.splice(indexEnd, 0, elementMoved)
+        saveTodos()
+        renderTodos()
+    })
+}
+
 
 function init() {
 
@@ -217,6 +255,7 @@ function init() {
     handleFilters()
     clearCompleted()
     handleDarkMode()
+    drag()
 }
 
 init()
