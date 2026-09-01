@@ -151,6 +151,25 @@ function clearCompleted() {
     })
 }
 
+function handleDarkMode() {
+
+    const headerMode = document.querySelector(".header__mode")
+    const headerIcon = document.querySelector(".header__icon")
+
+    headerMode.addEventListener("click", () => {
+
+        const stateDarkMode = document.documentElement.getAttribute("data-theme")
+
+        if (stateDarkMode === null) {
+            document.documentElement.setAttribute("data-theme", "dark")
+            headerIcon.src = "./images/icon-sun.svg"
+        } else {
+            document.documentElement.removeAttribute("data-theme")
+            headerIcon.src = "./images/icon-moon.svg"
+        }
+    })
+}
+
 
 function init() {
 
@@ -160,6 +179,7 @@ function init() {
     deleteTask()
     handleFilters()
     clearCompleted()
+    handleDarkMode()
 }
 
 init()
