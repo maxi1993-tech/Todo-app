@@ -166,12 +166,27 @@ function handleDarkMode() {
             document.documentElement.setAttribute("data-theme", "dark")
             headerIcon.src = "./images/icon-sun.svg"
             headerMode.ariaLabel = "Activate light mode"
+            localStorage.setItem("theme", "dark")
         } else {
             document.documentElement.removeAttribute("data-theme")
             headerIcon.src = "./images/icon-moon.svg"
             headerMode.ariaLabel = "Activate dark mode"
+            localStorage.setItem("theme", "light")
         }
     })
+}
+
+function loadTheme() {
+    const headerMode = document.querySelector(".header__mode")
+    const headerIcon = document.querySelector(".header__icon")
+
+    const storage = localStorage.getItem("theme")
+
+    if (storage === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark")
+        headerIcon.src = "./images/icon-sun.svg"
+        headerMode.ariaLabel = "Activate light mode"
+    }
 }
 
 
@@ -184,6 +199,7 @@ function init() {
     handleFilters()
     clearCompleted()
     handleDarkMode()
+    loadTheme()
 }
 
 init()
