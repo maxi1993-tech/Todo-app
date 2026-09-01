@@ -33,10 +33,12 @@ function renderTodos() {
         const liClone = todoClone.querySelector("li")
         const inputClone = todoClone.querySelector("input")
         const labelClone = todoClone.querySelector("label")
+        const deleteButton = todoClone.querySelector(".todo__delete")
 
         labelClone.textContent = todo.text
         inputClone.checked = todo.done
         liClone.dataset.todoId = todo.id
+        deleteButton.ariaLabel = `Delete ${todo.text}`
 
         const uniqueId = `todo-${todo.id}`
 
@@ -163,9 +165,11 @@ function handleDarkMode() {
         if (stateDarkMode === null) {
             document.documentElement.setAttribute("data-theme", "dark")
             headerIcon.src = "./images/icon-sun.svg"
+            headerMode.ariaLabel = "Activate light mode"
         } else {
             document.documentElement.removeAttribute("data-theme")
             headerIcon.src = "./images/icon-moon.svg"
+            headerMode.ariaLabel = "Activate dark mode"
         }
     })
 }
