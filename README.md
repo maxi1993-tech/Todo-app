@@ -38,7 +38,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/todo-app-with-sass-vanilla-js-localstorage-and-drag-and-drop-FBstNjDmiz)
 - Live Site URL: [Live site on GitHub Pages](https://maxi1993-tech.github.io/Todo-app/)
 
 ## My process
